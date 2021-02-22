@@ -67,6 +67,7 @@ class RNNHyperParams:
     max_step = 100000
 
     n_workers = 0
+    seed = 0 # added 22-02-21
 
 class VAEHyperParams:
     vision = 'VAE'
