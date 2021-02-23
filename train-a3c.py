@@ -27,8 +27,8 @@ Transition = namedtuple('Transition',
                         ('state', 'action', 'reward', 'next_state'))
 
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-# device = 'cpu'
+#device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cpu'
 print(device)
 logdir = 'logs'
 
@@ -80,6 +80,7 @@ def train_process(global_agent, vae, rnn, update_term, pid, state_dims, hidden_d
     running_means = []
     step = 0
     for ep in range(max_ep):
+        print('Train process, ep=', ep)  # 23-02-21
         obs = env.reset()
         score = 0.
         i = 0
@@ -188,6 +189,7 @@ def test_process(global_agent, vae, rnn, update_term, pid, state_dims, hidden_di
     worse = 0
     best_agent_state = None
     for ep in range(test_ep):
+        print('Test process, ep=',ep) #23-02-21
         agent.load_state_dict(global_agent.state_dict())
         env.reset()
         score = 0.
