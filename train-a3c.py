@@ -1,9 +1,3 @@
-'''
-ЗАКОМЕНТИРОВАЛ
-#!/usr/bin/env python
-# coding: utf-8
-'''
-
 import numpy as np
 import random
 import math
@@ -33,8 +27,9 @@ Transition = namedtuple('Transition',
                         ('state', 'action', 'reward', 'next_state'))
 
 
-# device = 'cuda' if torch.cuda.is_available() else 'cpu'
-device = 'cpu'
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+# device = 'cpu'
+print(device)
 logdir = 'logs'
 
 MAX_R = 1.
